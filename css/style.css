@@ -1,0 +1,75 @@
+.mbox {
+  max-width: 1000px;
+  margin:0 auto;
+}
+h1, h2 {
+  text-align: center;
+}
+
+button{
+  cursor: pointer;
+}
+#addSubmit{
+  background-color: #3f51b5;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.list {
+  padding-left: 0;
+  margin:0 auto;
+  width: 990px;
+  list-style: none;
+}
+
+.item {
+  margin-bottom: 15px;
+  padding-right: 80px;
+  min-height: 21px;
+  position: relative;
+}
+
+.item:before {
+	content: "";
+	width: 100%;
+	height: 2px;
+	background: #ff8b38;
+	position: absolute;
+	margin: 29px 0px;
+	}
+
+.item:first-child {
+  font-weight: bold;
+}
+
+.item-text {
+  display: inline-block;
+  line-height: 21px;
+  width: 165px;
+}
+
+.item-remove {
+  position: absolute;
+  right: 0;
+  height: 24px;
+  background-color: #f50057;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.item-edit{
+  background-color: #3f51b5;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px
+}
+
+form > input {
+  margin-bottom: 10px;
+  width: 150px;
+}
+input:focus {
+  background-color: yellow;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mor tgage calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="mbox">
+    <h2>Create bank</h2>
+    <form>
+      <label for="addName">Bank name:</label>
+      <input type="text" id="addName" />
+
+      <label for="addRate">%</label>
+      <input type="text" id="addRate" placeholder="Interest rate" />
+
+      <label for="maxLoan"><i class="fa fa-money" aria-hidden="true"></i></label>
+      <input type="text" id="maxLoan" placeholder="Maximum loan" />
+
+      <label for="minPayment"><i class="fa fa-money" aria-hidden="true"></i></label>
+      <input type="text" id="minPayment" placeholder="Minimum down payment" />
+
+      <label for="loanTerm"><i class="fa fa-calendar" aria-hidden="true"></i></label>
+      <input type="text" id="loanTerm" placeholder="Loan term in months" />
+      <button id="addSubmit">Add</button>
+    </form>
+    <hr>
+
+    <h2>Banks management</h2>
+    <ul class="list">
+      <li class="item"><span class="item-text">Bank name</span>
+        <span class="item-text">Interest rate %</span>
+        <span class="item-text">Maximum loan</span>
+        <span class="item-text">Minimum payment</span>
+        <span class="item-text">Loan term</span></li>
+    </ul>
+  </div>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
