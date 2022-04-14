@@ -2,6 +2,10 @@
   max-width: 1000px;
   margin:0 auto;
 }
+.mbox.hide {
+  display: none;
+}
+
 h1, h2 {
   text-align: center;
 }
@@ -72,4 +76,61 @@ form > input {
 }
 input:focus {
   background-color: yellow;
+}
+
+#calc{
+  margin-top: 90px;
+  display: block;
+  margin: 45px auto;
+  background-color:DarkGreen;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+.input-group{
+  display: flex;
+  margin: 5px auto;
+  justify-content: center;
+}
+.btn-group{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.btn-DarkCyan{
+  background-color:DarkCyan;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 3px;
+}
+
+.btn-Crimson{
+  background-color:Crimson;
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 3px;
+}
+
+#back{
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 3px 15px;
+  margin: 20px;
+}
+#result{
+  margin-top: 25px;
+  text-align: center;
+}
+
+.input-group select{
+  width: 173px;
+}
+
+.error{
+  color: red;
 }

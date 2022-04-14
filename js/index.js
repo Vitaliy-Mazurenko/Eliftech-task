@@ -5,22 +5,22 @@ const $maxLoan = $('#maxLoan');
 const $minPayment = $('#minPayment');
 const $loanTerm = $('#loanTerm');
 const $add = $('#addSubmit');
-
+const $select = $('#select_id');
 
 const list = [
   {
     text: 'KredoBank',
-    rate: 10,
+    rate: 7,
     loan: 300000,
-    pay: 60000,
-    term: 12
+    pay: 6000,
+    term: 2
   },
   {
     text: 'OtpBank',
-    rate: 7,
+    rate: 10,
     loan: 400000,
-    pay: 80000,
-    term: 6
+    pay: 8000,
+    term: 3
   }
 ];
 
@@ -118,6 +118,48 @@ const list = [
     <button class="item-remove" id="${i}">Remove</button></li>`);
   }
 
+  $('.calculator').hide();
+  $('body').on('click', '#calc', function () {
+    $('.mbox').toggleClass('hide');
+    $('.calculator').show();
+    let banks = JSON.parse(localStorage.getItem('list')) || list;
+    for (let i = 0; i < banks.length; i++) {
+      $('#select_id').append(`<option>${banks[i].text}</option>`);
+    }
+    $('#select_id').on('change', function() {
+      let filter = banks.filter(bank => bank.text === this.value)
+
+      $('#get').click(function () {
+        if ($('#summ').val() > filter[0].loan) {
+          let firstMessage = '<span class="error">'+'incorrect initial loan'+'</span>';
+        $('#result').html(firstMessage);
+        } else if ($('#payment').val() < filter[0].pay){
+          let firstMessage = '<span class="error">'+'incorrect down payment'+'</span>';
+          $('#result').html(firstMessage);
+        } else {
+        $('#result').html('');
+        let percent = Number(filter[0].rate);
+        $('#payment').val('');
+        let summ = Number($('#summ').val());
+
+        let monthlyRate = filter[0].rate/12/100;
+        let monthlyPay = summ * monthlyRate *
+         (1 + monthlyRate) ** (filter[0].term * 12) / ((1 + monthlyRate) ** (filter[0].term * 12) - 1);
+
+        let firstMessage = 'Amount of loan: <strong>'+summ+' </strong><br>Interest rate: <strong>'+percent
+        +'%</strong><br>Loan term: <strong>'+filter[0].term+' year</strong><br>';
+        $('#result').html(firstMessage);
+
+        $('#result').html($('#result').html() + '<br> <h3>Mortgage payment: '+monthlyPay.toFixed(2)+' </h3>');
+        }
+      });
+
+      $('#clear').click(function () {
+        $('#result').html('');
+      });
+    });
+
+  })
 
 })(jQuery);
 

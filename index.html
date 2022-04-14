@@ -27,7 +27,7 @@
       <input type="text" id="minPayment" placeholder="Minimum down payment" />
 
       <label for="loanTerm"><i class="fa fa-calendar" aria-hidden="true"></i></label>
-      <input type="text" id="loanTerm" placeholder="Loan term in months" />
+      <input type="text" id="loanTerm" placeholder="Loan term" />
       <button id="addSubmit">Add</button>
     </form>
     <hr>
@@ -40,6 +40,34 @@
         <span class="item-text">Minimum payment</span>
         <span class="item-text">Loan term</span></li>
     </ul>
+    <button id="calc">Calculator</button>
+  </div>
+  <div class="calculator">
+    <button id="back" onclick="window.location.reload()" class="btn btn-DarkCyan">Back</button>
+    <div class="container">
+      <h1>Mortgage calculator</h1>
+      <div class="input-group">
+        <input type="text" id="summ" class="form-control" placeholder="Initial loan">
+      </div>
+      <div class="space-10"></div>
+      <div class="input-group">
+        <input type="text" id="payment" class="form-control" placeholder="Down payment">
+      </div>
+      <div class="space-10"></div>
+      <div class="input-group">
+        <select id="select_id">
+          <option>Select bank</option>
+        </select>
+      </div>
+      <div class="space-10"></div>
+      <div class="btn-group">
+      <button id="get" class="btn btn-DarkCyan">Calculate</button>
+      <button id="clear" class="btn btn-Crimson">Clear</button>
+    </div>
+      <div class="space-10"></div>
+      <div id="result">
+      </div>
+    </div>
   </div>
 
 
