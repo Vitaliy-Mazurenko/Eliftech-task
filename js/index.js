@@ -142,9 +142,9 @@ const list = [
         $('#payment').val('');
         let summ = Number($('#summ').val());
 
-        let monthlyRate = filter[0].rate/12/100;
+        let monthlyRate = filter[0].rate/12;
         let monthlyPay = summ * monthlyRate *
-         (1 + monthlyRate) ** (filter[0].term * 12) / ((1 + monthlyRate) ** (filter[0].term * 12) - 1);
+         (1 + monthlyRate) ** 1 / (1 + monthlyRate) ** 1 - 1;
 
         let firstMessage = 'Amount of loan: <strong>'+summ+' </strong><br>Interest rate: <strong>'+percent
         +'%</strong><br>Loan term: <strong>'+filter[0].term+' year</strong><br>';
